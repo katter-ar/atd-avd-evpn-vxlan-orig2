@@ -202,5 +202,3 @@ Follow the below steps of which make commands to run to build the initial fabric
 
 1) Deploy Lab Prep Configs:  `make preplab`
 2) Continue on with labs in the `lab guide` directory.
-
-# atd-avd-evpn-vxlan
