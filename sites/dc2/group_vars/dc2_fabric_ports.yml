@@ -1,0 +1,25 @@
+---
+# DC2 fab ports vars
+
+connected_endpoints_keys:
+ servers:
+   type: server
+ firewalls:
+   type: firewall
+ routers:
+   type: router
+
+port_profiles:
+ PP-DEFAULTS:
+   spanning_tree_portfast: edge
+ PP-BLUE:
+   mode: access
+   vlans: "10"
+   parent_profile: PP-DEFAULTS
+ PP-GREEN:
+   mode: access
+   vlans: "20"
+   parent_profile: PP-DEFAULTS
+ PP-FIREWALL:
+   mode: trunk
+   vlans: "10,20,30"

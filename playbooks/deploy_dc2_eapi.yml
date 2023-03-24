@@ -1,0 +1,13 @@
+---
+- name: Deploy DC2 Configurations via EAPI
+  hosts: dc2_fabric
+  tasks:
+
+    - name: Import Global Vars
+      include_vars: "{{ item }}"
+      with_items:
+        - "../global_vars/global_dc_vars.yml"
+
+    - name: Deploy Configuration to Device
+      import_role:
+         name: arista.avd.eos_config_deploy_eapi
