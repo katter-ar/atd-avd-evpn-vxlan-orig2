@@ -26,6 +26,7 @@ Since this topology is for two datacenters, the vars and inventory directories a
 |---lab guide
     |---evpn-vxlan-labs.md
 |---playbooks
+    |---bounce.yml
     |---build_dc1.yml
     |---build_dc2.yml
     |---deploy_dc1_cvp.yml
