@@ -204,7 +204,7 @@ After modifying and saving the vars files, complete the following steps:
 2) Review the configurations in their respective directories and verify the changes are correct.  
 3) Review the changes to the documentation that is auto-created.
 4) Issue the `make deploy_dc1_eapi` and `make deploy_dc2_eapi`
-5) Login to leaf switches 3 and 4 and verify the new configurations are present. It might be necessary to perform a shut/no shut on interfaces ethernet 2 & 3 for s1-leaf3&4 and s2-leaf3&4.
+5) Issue the `make bounce` to reset err-disabled interfaces ethernet 2 & 3 for s1-leaf3&4 and s2-leaf3&4.
 6) Validate that s1-host2 and s2-host2 can ping 10.111.134.1
 7) Validate that s1-host2 can ping s2-host2
 8) Validate that s1-host1 CANNOT ping s1-host2
