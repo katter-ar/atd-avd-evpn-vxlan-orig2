@@ -1,0 +1,20 @@
+---
+- name: Deploy WAN & Host configurations
+  hosts: "{{ target_hosts }}"
+  gather_facts: false
+
+  tasks:
+
+    - name: Import Global Vars
+      include_vars: "{{ item }}"
+      with_items:
+        - "../global_vars/global_dc_vars.yml"
+
+    - name: load configuration from file
+      arista.eos.eos_command:
+        commands:
+        - configure terminal
+        - interface ethernet2-3
+        - shutdown
+        - no shutdown
+        - end

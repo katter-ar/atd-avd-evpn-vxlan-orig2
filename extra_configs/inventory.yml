@@ -1,11 +1,19 @@
 ---
-LAB:
-  hosts:
-    s1-core1:
-    s1-core2:
-    s1-host1:
-    s1-host2:
-    s2-core1:
-    s2-core2:
-    s2-host1:
-    s2-host2:
+all:
+  children:
+    BOUNCE:
+      hosts:
+        s1-leaf3:
+        s1-leaf4:
+        s2-leaf3:
+        s2-leaf4:
+    LAB:
+      hosts:
+        s1-core1:
+        s1-core2:
+        s1-host1:
+        s1-host2:
+        s2-core1:
+        s2-core2:
+        s2-host1:
+        s2-host2:

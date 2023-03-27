@@ -37,3 +37,11 @@ deploy_dc2_eapi: ## Deploy DC1 Spine/Leaf AVD generated configs via eAPI
 .PHONY: preplab
 preplab: ## Deploy Configs via eAPI
 	ansible-playbook playbooks/preplab.yml -i extra_configs/inventory.yml -e "target_hosts=LAB"
+
+########################################################
+# Shutdown / No Shutdown err-disable interfaces e2-3 on leaf3-4 via eAPI
+########################################################
+
+.PHONY: bounce
+bounce: ## Bounce err-disabled interfaces e2-3 on leaf3-4 via eAPI
+	ansible-playbook playbooks/bounce.yml -i extra_configs/inventory.yml -e "target_hosts=BOUNCE"
