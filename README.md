@@ -193,7 +193,21 @@ preplab: ## Deploy Configs via eAPI
 
 **Inventory File:**  `extra_configs/inventory.yml`
 
-**Description:** This command deploys a few interface and BGP configuration changes to the s2-core1 and s2-core2 devices in datacenter2.  This is required to enable routing between the two datacenter fabrics.  This playbook uses the eos_config module to merge the config changes on the devices via their eAPI. This command also deploys the hosts in each datacenter fabric
+**Description:** This command deploys a few interface and BGP configuration changes to the s2-core1 and s2-core2 devices in datacenter2.  This is required to enable routing between the two datacenter fabrics.  This playbook uses the eos_config module to merge the config changes on the devices via their eAPI. This command also deploys the hosts in each datacenter fabric.
+
+<br>
+
+**Command:**  `make bounce`
+
+```bash
+bounce: ## Bounce err-disabled interfaces e2-3 on leaf3-4 via eAPI
+	ansible-playbook playbooks/bounce.yml -i extra_configs/inventory.yml -e "target_hosts=BOUNCE"
+```
+**Playbook Called:**  `bounce.yml`
+
+**Inventory File:**  `extra_configs/inventory.yml`
+
+**Description:** This command was created to automate the resetting of err-disabled interfaces on leaf3&4 pairs in both DCs.  This playbook uses the eos_command module to deploy specific commands to the devices via their eAPI.
 
 <br>
 
